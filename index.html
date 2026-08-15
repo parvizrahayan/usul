@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>اصول — کوتاه‌ترین مسیر درست</title>
+<link rel="canonical" href="https://parvizrahayan.github.io/usul/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "اصول",
+  "url": "https://parvizrahayan.github.io/usul/",
+  "description": "کتابخانه‌ای از الگوهای امتحان‌شده برای کارهای رایج با هوش مصنوعی.",
+  "author": { "@type": "Person", "name": "پرویز معین" }
+}
+</script>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:title" content="اصول">
+<meta property="og:description" content="کوتاه‌ترین مسیر درست، برای کارهایی که تکرار می‌شوند.">
+<meta property="og:image" content="https://parvizrahayan.github.io/usul/og-image.png">
+<meta property="og:url" content="https://parvizrahayan.github.io/usul/">
+<meta property="og:locale" content="fa_IR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://parvizrahayan.github.io/usul/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@500;600;700&family=Vazirmatn:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<meta name="description" content="کتابخانه‌ای از مسیرهای امتحان‌شده برای انجام کارها با هوش مصنوعی — بدون آزمون‌وخطای هدررونده.">
+<style>
+  :root{
+    --paper:#FDFCFA; --ink:#1C1A17; --ink-soft:#59544C; --ink-faint:#9B958A;
+    --line:#E4E0D8; --accent:#7A2E2E; --accent-soft:#F3E7E5;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{background:var(--paper); color:var(--ink); font-family:'Vazirmatn',sans-serif; line-height:1.9;}
+  .mono{font-family:'JetBrains Mono',monospace; direction:ltr;}
+  .serif{font-family:'Noto Serif',serif;}
+  .wrap{max-width:760px; margin:0 auto; padding:0 24px;}
+
+  /* ---------- MASTHEAD ---------- */
+  .masthead{border-bottom:3px double var(--ink); padding:34px 0 18px;}
+  .masthead .wrap{display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:10px;}
+  .masthead-name{font-family:'Noto Serif',serif; font-weight:700; font-size:38px; letter-spacing:0.02em;}
+  .logo-mark{width:210px; color:var(--ink);}
+  .logo-mark svg{width:100%; height:auto; display:block;}
+  .logo-mark{width:150px;}
+  .logo-mark svg{width:100%; height:auto; display:block;}
+  .masthead-meta{text-align:left; font-size:11.5px; color:var(--ink-faint); font-family:'JetBrains Mono',monospace; direction:ltr;}
+  .masthead-tag{font-size:13.5px; color:var(--ink-soft); margin-top:6px;}
+
+  nav.cats{border-bottom:1px solid var(--ink); padding:12px 0;}
+  nav.cats .wrap{display:flex; gap:22px; flex-wrap:wrap; align-items:center;}
+  .cat{font-size:13.5px; font-weight:600; color:var(--ink-soft); cursor:default;}
+  .cat.on{color:var(--accent); border-bottom:2px solid var(--accent); padding-bottom:4px;}
+  .cat.soon{color:var(--ink-faint); font-weight:400;}
+
+  main{padding:40px 0 60px;}
+  .intro{font-size:15px; color:var(--ink-soft); max-width:560px; margin-bottom:40px; border-right:3px solid var(--accent); padding-right:16px;}
+
+  article.entry{padding:34px 0; border-top:1px solid var(--line);}
+  article.entry:first-of-type{border-top:none; padding-top:0;}
+  .entry-kicker{font-size:11px; color:var(--accent); font-weight:700; letter-spacing:0.03em; margin-bottom:8px;}
+  .entry-title{font-family:'Noto Serif',serif; font-size:23px; font-weight:600; line-height:1.5;}
+  .entry-context{font-size:14px; color:var(--ink-soft); margin-top:10px; max-width:600px;}
+
+  .prompt-box{
+    background:#FBF9F5; border:1px solid var(--line); border-right:3px solid var(--accent);
+    border-radius:4px; padding:18px 20px; margin-top:18px; font-size:14px; color:var(--ink);
+    white-space:pre-wrap; line-height:1.85;
+  }
+  .prompt-actions{display:flex; justify-content:space-between; align-items:center; margin-top:10px;}
+  .prompt-label{font-size:11px; color:var(--ink-faint); font-family:'JetBrains Mono',monospace;}
+  .copy-btn{
+    font-size:12.5px; color:var(--accent); background:var(--accent-soft); border:1px solid var(--accent);
+    padding:6px 14px; border-radius:5px; cursor:pointer; font-family:'Vazirmatn',sans-serif; font-weight:600;
+  }
+  .copy-btn:hover{background:var(--accent); color:#fff;}
+
+  .why-box{margin-top:16px; font-size:13.5px; color:var(--ink-soft);}
+  .why-box b{color:var(--ink);}
+
+  .toast{
+    position:fixed; bottom:24px; left:50%; transform:translateX(-50%) translateY(20px);
+    background:var(--ink); color:#fff; font-size:13.5px; font-weight:600;
+    padding:10px 20px; border-radius:6px; opacity:0; pointer-events:none;
+    transition:opacity .2s ease, transform .2s ease; z-index:100;
+  }
+  .toast.show{opacity:1; transform:translateX(-50%) translateY(0);}
+
+  footer{border-top:3px double var(--ink); padding:30px 0 50px; text-align:center;}
+  footer p{font-size:12px; color:var(--ink-faint);}
+  footer .note{font-size:12.5px; color:var(--ink-soft); margin-top:10px; max-width:480px; margin-left:auto; margin-right:auto;}
+  footer .dedication{font-size:13.5px; color:var(--ink); margin-top:14px; font-weight:700; font-family:'Noto Serif',serif;}
+
+  @media (max-width:560px){ .masthead-name{font-size:29px;} .entry-title{font-size:19px;} }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <div>
+      <div class="logo-mark">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="45 118 160 120" role="img" aria-label="اصول">
+  <defs>
+    <style>
+      .st0 {
+        fill: #231f20;
+      }
+
+      .st1 {
+        stroke: #a7a9ac;
+      }
+
+      .st1, .st2 {
+        fill: none;
+        stroke-miterlimit: 10;
+        stroke-width: 9px;
+      }
+
+      .st2 {
+        stroke: #000;
+      }
+    </style>
+  </defs>
+  <line class="st1" x1="188.94" y1="157.04" x2="188.94" y2="207.66"/>
+  <line class="st1" x1="143.22" y1="194.23" x2="143.22" y2="205.88"/>
+  <path class="st1" d="M175.54,168.12"/>
+  <path class="st1" d="M184.14,207.02c.01-.4.02-.81.02-1.22,0-14.52-7.24-26.28-16.16-26.28s-16.16,11.77-16.16,26.28"/>
+  <line class="st1" x1="184.16" y1="205.8" x2="130.82" y2="205.8"/>
+  <path class="st1" d="M132.79,173.53c-.4,0-.81,0-1.22,0-14.52.18-26.19,7.57-26.08,16.49.11,8.92,11.97,16.01,26.49,15.83"/>
+  <line class="st1" x1="131.57" y1="173.53" x2="132.24" y2="226.86"/>
+  <line class="st1" x1="101.7" y1="159.27" x2="101.7" y2="215.72"/>
+  <path class="st1" d="M101.7,195.78c0,.42-.02.85-.04,1.28-.75,15.26-8.58,27.25-17.5,26.79-8.91-.46-15.53-13.2-14.78-28.46"/>
+  <line class="st1" x1="185.86" y1="154.78" x2="185.86" y2="205.4"/>
+  <line class="st1" x1="140.14" y1="191.97" x2="140.14" y2="203.62"/>
+  <path class="st1" d="M172.46,165.85"/>
+  <path class="st1" d="M181.06,204.75c.01-.4.02-.81.02-1.22,0-14.52-7.24-26.28-16.16-26.28s-16.16,11.77-16.16,26.28"/>
+  <line class="st1" x1="181.08" y1="203.54" x2="127.74" y2="203.54"/>
+  <path class="st1" d="M129.71,171.27c-.4,0-.81,0-1.22,0-14.52.18-26.19,7.57-26.08,16.49.11,8.92,11.97,16.01,26.49,15.83"/>
+  <line class="st1" x1="128.49" y1="171.27" x2="129.16" y2="224.6"/>
+  <line class="st1" x1="98.62" y1="157.01" x2="98.62" y2="213.46"/>
+  <path class="st1" d="M98.62,193.51c0,.42-.02.85-.04,1.28-.75,15.26-8.58,27.25-17.5,26.79-8.91-.46-15.53-13.2-14.78-28.46"/>
+  <line class="st2" x1="188.94" y1="153.6" x2="188.94" y2="204.22"/>
+  <line class="st2" x1="143.22" y1="190.79" x2="143.22" y2="202.44"/>
+  <path class="st2" d="M175.54,164.68"/>
+  <path class="st2" d="M184.14,203.58c.01-.4.02-.81.02-1.22,0-14.52-7.24-26.28-16.16-26.28s-16.16,11.77-16.16,26.28"/>
+  <line class="st2" x1="184.16" y1="202.36" x2="130.82" y2="202.36"/>
+  <path class="st2" d="M132.79,170.1c-.4,0-.81,0-1.22,0-14.52.18-26.19,7.57-26.08,16.49.11,8.92,11.97,16.01,26.49,15.83"/>
+  <line class="st2" x1="131.57" y1="170.09" x2="132.24" y2="223.43"/>
+  <line class="st2" x1="101.7" y1="155.83" x2="101.7" y2="212.28"/>
+  <path class="st2" d="M101.7,192.34c0,.42-.02.85-.04,1.28-.75,15.26-8.58,27.25-17.5,26.79-8.91-.46-15.53-13.2-14.78-28.46"/>
+  <path class="st0" d="M179.98,148.85c.42-.12.95-.28,1.61-.47.66-.19,1.36-.4,2.1-.64.74-.24,1.5-.51,2.27-.81.77-.3,1.47-.63,2.1-.99l-.84-.34c-.69-.33-1.27-.71-1.74-1.14-.47-.43-.85-.88-1.13-1.35-.28-.47-.48-.95-.6-1.44-.11-.49-.17-.97-.17-1.42,0-.75.15-1.45.44-2.1.27-.54.62-1.05,1.05-1.52.43-.47.9-.88,1.42-1.22.52-.34,1.08-.62,1.66-.81s1.18-.3,1.78-.3c.36,0,.71.04,1.08.13.37.08.71.2,1.02.34.67.35,1.26.85,1.78,1.47.52.63.9,1.33,1.13,2.1v-.03c.15.44.25.86.3,1.27.05.41.08.82.08,1.24,0,.94-.12,1.89-.34,2.85l.91.19-1.35,4.41c-.48-.08-.87-.17-1.17-.25-.3-.08-.56-.17-.77-.25-.79.67-1.7,1.29-2.71,1.86-1.01.57-2,1.09-2.97,1.53-.97.45-1.86.82-2.66,1.13-.8.3-1.39.52-1.77.64l-1.25.31-1.25-4.38ZM189.22,138.33c-.15,0-.32.04-.53.12-.21.08-.42.2-.63.34-.21.15-.4.31-.58.49s-.32.37-.42.58c.06.15.26.34.58.59s.71.52,1.14.8c.44.28.89.55,1.35.8.46.25.86.45,1.19.59.02-.08.03-.15.02-.19-.01-.04-.02-.11-.02-.22,0-.42-.05-.84-.14-1.27-.09-.43-.23-.82-.41-1.17-.18-.35-.4-.66-.66-.92-.26-.26-.56-.44-.89-.55Z"/>
+  <path class="st0" d="M166.95,165.08c.42-.12.95-.28,1.61-.47.66-.19,1.36-.4,2.1-.64.74-.24,1.5-.51,2.27-.81.77-.3,1.47-.63,2.1-.99l-.85-.34c-.69-.33-1.27-.71-1.74-1.14s-.84-.88-1.13-1.35c-.28-.47-.48-.95-.59-1.44s-.17-.97-.17-1.42c0-.75.15-1.45.44-2.1.27-.54.62-1.05,1.05-1.52.43-.47.9-.88,1.42-1.22.52-.34,1.08-.62,1.66-.81s1.18-.3,1.78-.3c.35,0,.71.04,1.08.13.37.08.7.2,1.02.34.67.35,1.26.85,1.78,1.47.52.63.9,1.33,1.13,2.1v-.03c.15.44.25.86.3,1.27.05.41.08.82.08,1.24,0,.94-.12,1.89-.34,2.85l.91.19-1.35,4.41c-.48-.08-.87-.17-1.17-.25-.3-.08-.56-.17-.77-.25-.79.67-1.7,1.29-2.71,1.86-1.01.57-2,1.09-2.97,1.53-.97.45-1.86.82-2.66,1.13-.8.3-1.39.52-1.77.64l-1.25.31-1.25-4.38ZM176.18,154.56c-.15,0-.32.04-.53.12-.21.08-.42.2-.63.34-.21.15-.4.31-.58.49s-.32.37-.42.58c.06.15.26.34.58.59s.7.52,1.14.8.89.55,1.35.8c.46.25.86.45,1.19.59.02-.08.03-.15.02-.19-.01-.04-.02-.11-.02-.22,0-.42-.05-.84-.14-1.27-.09-.43-.23-.82-.41-1.17-.18-.35-.4-.66-.66-.92-.26-.26-.56-.44-.89-.55Z"/>
+</svg>
+      </div>
+      <div class="masthead-tag">کوتاه‌ترین مسیر درست — بدون آزمون‌وخطای هدررونده</div>
+    </div>
+    <div class="masthead-meta">شماره‌ی اول<br>مرداد ۱۴۰۵</div>
+  </div>
+</header>
+
+<nav class="cats">
+  <div class="wrap">
+    <div class="cat on">نوشتن و پژوهش</div>
+    <div class="cat soon">کدنویسی · به‌زودی</div>
+    <div class="cat soon">تصویر · به‌زودی</div>
+    <div class="cat soon">تحلیل داده · به‌زودی</div>
+  </div>
+</nav>
+
+<main>
+  <div class="wrap">
+    <p class="intro">هر ورودی اینجا یک مسیر امتحان‌شده است، نه یک حدس. قبل از اینکه با آزمون‌وخطا وقت و انرژی هدر بدهی، از همینجا شروع کن.</p>
+
+    <article class="entry">
+      <div class="entry-kicker">نوشتن و پژوهش · ۰۱</div>
+      <div class="entry-title serif">خلاصه‌کردن یک سند بلند</div>
+      <p class="entry-context">به‌جای چند بار خواستن «کوتاه‌ترش کن»، از اول ساختار خلاصه را مشخص کن تا یک‌بار جواب درست بگیری.</p>
+      <div class="prompt-box mono" style="direction:rtl; font-family:'Vazirmatn',sans-serif;" data-prompt="این سند را در پنج بند خلاصه کن. هر بند دقیقاً یک ایده‌ی اصلی داشته باشد و حداکثر دو جمله باشد. در پایان، یک جمله‌ی نتیجه‌گیری کلی اضافه کن که بگوید این سند در یک خط چه می‌گوید. اگر سند شامل عدد یا آمار مهمی است، آن‌ها را در خلاصه حفظ کن، حذفشان نکن.">این سند را در پنج بند خلاصه کن. هر بند دقیقاً یک ایده‌ی اصلی داشته باشد و حداکثر دو جمله باشد. در پایان، یک جمله‌ی نتیجه‌گیری کلی اضافه کن که بگوید این سند در یک خط چه می‌گوید. اگر سند شامل عدد یا آمار مهمی است، آن‌ها را در خلاصه حفظ کن، حذفشان نکن.</div>
+      <div class="prompt-actions">
+        <span class="prompt-label">PROMPT</span>
+        <button class="copy-btn" data-action="copy-prompt">کپی متن</button>
+      </div>
+      <div class="why-box"><b>چرا این روش کار می‌کند:</b> با مشخص‌کردن دقیق تعداد بند و طول هر بند، مدل از اول قالب درست را می‌سازد، نه اینکه حدس بزند و بعد مجبور شوی چند بار اصلاحش کنی.</div>
+    </article>
+
+    <article class="entry">
+      <div class="entry-kicker">نوشتن و پژوهش · ۰۲</div>
+      <div class="entry-title serif">تدوین سؤال تحقیق از یک موضوع مبهم</div>
+      <p class="entry-context">وقتی موضوعی در ذهنت هست ولی هنوز سؤال مشخصی نداری، این الگو کمکت می‌کند موضوع را به چند سؤال قابل‌بررسی تبدیل کنی.</p>
+      <div class="prompt-box" style="direction:rtl; font-family:'Vazirmatn',sans-serif;" data-prompt="من می‌خواهم درباره‌ی [موضوع] تحقیق کنم اما هنوز سؤال دقیقی ندارم. سه سؤال تحقیقاتی مشخص و قابل‌بررسی از این موضوع استخراج کن. برای هر سؤال بگو چرا جواب‌دادن به آن ارزشمند است، و چه نوع منبع یا داده‌ای برای جواب‌دادن به آن لازم است.">من می‌خواهم درباره‌ی [موضوع] تحقیق کنم اما هنوز سؤال دقیقی ندارم. سه سؤال تحقیقاتی مشخص و قابل‌بررسی از این موضوع استخراج کن. برای هر سؤال بگو چرا جواب‌دادن به آن ارزشمند است، و چه نوع منبع یا داده‌ای برای جواب‌دادن به آن لازم است.</div>
+      <div class="prompt-actions">
+        <span class="prompt-label">PROMPT</span>
+        <button class="copy-btn" data-action="copy-prompt">کپی متن</button>
+      </div>
+      <div class="why-box"><b>چرا این روش کار می‌کند:</b> به‌جای اینکه مستقیم بخواهی مدل «تحقیق کند»، اول مسئله را باریک می‌کنی — همان کاری که یک پژوهشگر حرفه‌ای هم اول انجام می‌دهد.</div>
+    </article>
+
+    <article class="entry">
+      <div class="entry-kicker">نوشتن و پژوهش · ۰۳</div>
+      <div class="entry-title serif">ویرایش یک متن نوشته‌شده، بدون از‌دست‌دادن لحن خودت</div>
+      <p class="entry-context">مشکل رایج: می‌خواهی متن روان‌تر شود، ولی نتیجه دیگر شبیه نوشته‌ی خودت نیست. این الگو جلوی آن را می‌گیرد.</p>
+      <div class="prompt-box" style="direction:rtl; font-family:'Vazirmatn',sans-serif;" data-prompt="این متن را ویرایش کن: فقط غلط‌های دستوری، جمله‌های نامفهوم، و تکرارهای غیرضروری را اصلاح کن. لحن، کلمات انتخابی، و ساختار جمله‌بندی من را تغییر نده. اگر جایی واقعاً نیاز به بازنویسی کامل دارد، آن جمله را جدا مشخص کن و علتش را بگو، به‌جای اینکه خودت بازنویسی کنی.">این متن را ویرایش کن: فقط غلط‌های دستوری، جمله‌های نامفهوم، و تکرارهای غیرضروری را اصلاح کن. لحن، کلمات انتخابی، و ساختار جمله‌بندی من را تغییر نده. اگر جایی واقعاً نیاز به بازنویسی کامل دارد، آن جمله را جدا مشخص کن و علتش را بگو، به‌جای اینکه خودت بازنویسی کنی.</div>
+      <div class="prompt-actions">
+        <span class="prompt-label">PROMPT</span>
+        <button class="copy-btn" data-action="copy-prompt">کپی متن</button>
+      </div>
+      <div class="why-box"><b>چرا این روش کار می‌کند:</b> مرز «ویرایش» و «بازنویسی» را از اول مشخص می‌کنی، پس مدل به‌جای جایگزین‌کردن صدای تو با صدای خودش، فقط اصلاح می‌کند.</div>
+    </article>
+
+    <article class="entry">
+      <div class="entry-kicker">نوشتن و پژوهش · ۰۴</div>
+      <div class="entry-title serif">نوشتن یک رزومه‌ی متمرکز بر یک جایگاه خاص</div>
+      <p class="entry-context">رزومه‌ی عمومی معمولاً هیچ‌جا برنده نمی‌شود. این الگو رزومه را برای یک جایگاه مشخص تیز می‌کند.</p>
+      <div class="prompt-box" style="direction:rtl; font-family:'Vazirmatn',sans-serif;" data-prompt="سوابق من را در ادامه می‌دهم. یک نسخه‌ی رزومه بساز که مخصوص جایگاه [عنوان شغلی] باشد: فقط تجربه‌ها و مهارت‌هایی را برجسته کن که مستقیم به این جایگاه مربوط‌اند، بقیه را کوتاه‌تر یا حذف کن. برای هر تجربه، یک نتیجه یا دستاورد قابل‌سنجش اضافه کن، نه فقط توضیح وظیفه.">سوابق من را در ادامه می‌دهم. یک نسخه‌ی رزومه بساز که مخصوص جایگاه [عنوان شغلی] باشد: فقط تجربه‌ها و مهارت‌هایی را برجسته کن که مستقیم به این جایگاه مربوط‌اند، بقیه را کوتاه‌تر یا حذف کن. برای هر تجربه، یک نتیجه یا دستاورد قابل‌سنجش اضافه کن، نه فقط توضیح وظیفه.</div>
+      <div class="prompt-actions">
+        <span class="prompt-label">PROMPT</span>
+        <button class="copy-btn" data-action="copy-prompt">کپی متن</button>
+      </div>
+      <div class="why-box"><b>چرا این روش کار می‌کند:</b> یک رزومه‌ی هدفمند برای یک جایگاه، همیشه از یک رزومه‌ی عمومی برای همه‌جا مؤثرتر است — این الگو تو را مجبور می‌کند از اول این تصمیم را بگیری.</div>
+    </article>
+
+  </div>
+</main>
+
+<div class="toast" id="toast">پرامپت کپی شد!</div>
+
+<footer>
+  <div class="wrap">
+    <p>اصول، بخشی از اکوسیستم پرویز معین — به‌زودی با پاساژ ادغام می‌شود.</p>
+    <p class="note">هر الگوی اینجا امتحان‌شده و بازبینی‌شده است، نه یک حدس. اگر الگویی داری که جواب داده، برایمان بفرست.</p>
+    <p class="dedication">ارادتمند، پرویز معین</p>
+  </div>
+</footer>
+
+<script>
+function showToast(msg){
+  const toast = document.getElementById('toast');
+  toast.textContent = msg;
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 1800);
+}
+
+document.addEventListener('click', async (e) => {
+  const btn = e.target.closest('[data-action="copy-prompt"]');
+  if(!btn) return;
+  const box = btn.closest('article').querySelector('.prompt-box');
+  const text = box.dataset.prompt;
+  try{
+    await navigator.clipboard.writeText(text);
+    showToast('پرامپت کپی شد!');
+  }catch(err){
+    showToast('کپی نشد — متن را دستی انتخاب کن.');
+  }
+});
+</script>
+
+</body>
+</html>
